@@ -1,2 +1,2 @@
 
-[[Notebook.canvas]]
+[Notebook](Notebook.canvas)

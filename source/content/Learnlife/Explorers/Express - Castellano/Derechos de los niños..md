@@ -12,7 +12,3 @@
 11. Derecho a la no discriminación
 12. Derecho a expresar su opinión - ser escuchados en asuntos que les afectan
 13. Derecho a la privacidad
-
-$$
-5*48=`r sum(c(1, 2, 3))`
-$$
