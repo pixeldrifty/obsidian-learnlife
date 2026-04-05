@@ -1,0 +1,3 @@
+![[Pasted image 20251004202133.png]]
+To understand fractions in word problems, ==identify the whole, the total number of equal parts (the denominator), and the number of parts being considered (the numerator)==. Then, translate the problem into a mathematical equation by identifying keywords that indicate addition, subtraction, multiplication, or division. Finally, solve the equation, simplify, and write the answer in a clear sentence that uses the context and units from the original problem.
+For example, if you ate ¾ of a pizza and your friend ate ½, you can compare who ate more by finding equivalent fractions or using a common denominator.

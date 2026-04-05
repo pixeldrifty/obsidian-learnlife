@@ -1,0 +1,303 @@
+/* Morpheme Explorer Plugin — uses Obsidian's active theme CSS vars throughout */
+
+.me-root {
+  padding: 16px;
+  font-family: var(--font-monospace);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-normal);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.me-header {
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 10px;
+}
+
+.me-title {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-normal);
+}
+
+.me-subtitle {
+  color: var(--text-muted);
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+.me-search-wrap {
+  margin-bottom: 8px;
+}
+
+.me-input {
+  width: 100%;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  padding: 7px 10px;
+  font-family: var(--font-monospace);
+  font-size: 13px;
+  color: var(--text-normal);
+  outline: none;
+  transition: border-color 0.15s;
+  box-shadow: none;
+}
+.me-input::placeholder { color: var(--text-faint); }
+.me-input:focus { border-color: var(--interactive-accent); }
+
+.me-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.me-chip {
+  font-size: 11px;
+  font-family: var(--font-monospace);
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  padding: 2px 6px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: background 0.1s, color 0.1s;
+}
+.me-chip:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.me-results {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.me-section-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 4px 0 2px;
+}
+
+.me-no-results {
+  color: var(--text-muted);
+  font-size: 12px;
+  padding: 10px 0;
+}
+
+/* ── Word card ─────────────────────────────── */
+
+.me-card {
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.12s;
+}
+.me-card:hover { border-color: var(--text-muted); }
+.me-card.is-open { border-color: var(--interactive-accent); }
+
+.me-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  user-select: none;
+}
+
+.me-card-word {
+  font-weight: bold;
+  font-size: 13px;
+  color: var(--text-normal);
+}
+
+.me-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.me-card-toggle {
+  font-size: 10px;
+  transition: transform 0.18s;
+}
+.me-card.is-open .me-card-toggle { transform: rotate(180deg); }
+
+.me-card-body {
+  display: none;
+  border-top: 1px solid var(--background-modifier-border);
+  padding: 12px;
+  background: var(--background-primary-alt, var(--background-primary));
+}
+.me-card.is-open .me-card-body { display: block; }
+
+/* ── Morpheme blocks ───────────────────────── */
+
+.me-morph-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-bottom: 10px;
+  align-items: flex-end;
+}
+
+.me-morph-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: var(--radius-s);
+  overflow: hidden;
+  border: 1px solid transparent;
+  min-width: 36px;
+}
+
+/* Prefix: green family */
+.me-morph-block.is-prefix { border-color: var(--color-green); }
+.me-morph-block.is-prefix .me-morph-text {
+  background: hsla(120, 40%, 40%, 0.15);
+  color: var(--color-green);
+}
+.me-morph-block.is-prefix .me-morph-label {
+  background: var(--color-green);
+  color: var(--text-on-accent);
+}
+
+/* Root: blue family */
+.me-morph-block.is-root { border-color: var(--color-blue); }
+.me-morph-block.is-root .me-morph-text {
+  background: hsla(210, 60%, 50%, 0.15);
+  color: var(--color-blue);
+}
+.me-morph-block.is-root .me-morph-label {
+  background: var(--color-blue);
+  color: var(--text-on-accent);
+}
+
+/* Suffix: orange family */
+.me-morph-block.is-suffix { border-color: var(--color-orange); }
+.me-morph-block.is-suffix .me-morph-text {
+  background: hsla(30, 70%, 50%, 0.15);
+  color: var(--color-orange);
+}
+.me-morph-block.is-suffix .me-morph-label {
+  background: var(--color-orange);
+  color: var(--text-on-accent);
+}
+
+.me-morph-text {
+  padding: 4px 10px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  width: 100%;
+  text-align: center;
+}
+
+.me-morph-label {
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 4px;
+  width: 100%;
+  text-align: center;
+}
+
+.me-plus {
+  align-self: center;
+  color: var(--text-faint);
+  font-size: 11px;
+  padding: 0 2px;
+  margin-bottom: 12px;
+}
+
+.me-origin-row {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.me-origin-tag {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  padding: 2px 5px;
+  color: var(--text-muted);
+}
+
+.me-definition {
+  font-size: 12px;
+  color: var(--text-normal);
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+.me-derivation {
+  font-size: 11px;
+  color: var(--text-muted);
+  border-left: 2px solid var(--background-modifier-border);
+  padding-left: 8px;
+  line-height: 1.6;
+}
+.me-derivation strong { color: var(--text-normal); }
+
+/* ── Wiktionary cards ──────────────────────── */
+
+.me-wikt-card {
+  background: var(--background-secondary);
+  border: 1px dashed var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.me-wikt-word {
+  font-weight: bold;
+  color: var(--text-normal);
+}
+
+.me-wikt-link {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+.me-wikt-link:hover { color: var(--interactive-accent); }
+
+.me-wikt-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 6px 0;
+}
+
+/* ── Spinner ───────────────────────────────── */
+
+.me-spinner {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--background-modifier-border);
+  border-top-color: var(--text-muted);
+  border-radius: 50%;
+  animation: me-spin 0.6s linear infinite;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+@keyframes me-spin { to { transform: rotate(360deg); } }

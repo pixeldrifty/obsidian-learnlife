@@ -1,0 +1,2 @@
+Prime factorization is the process of breaking down numbers into prime numbers, which are number only divisible by 1 and themselves.
+An example of prime factorization is ==expressing **72 as 2 × 2 × 2 × 3 × 3**, or **2³ × 3²** using exponents==.

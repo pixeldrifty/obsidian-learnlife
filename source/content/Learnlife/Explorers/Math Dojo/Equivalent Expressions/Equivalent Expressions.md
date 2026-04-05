@@ -1,0 +1,5 @@
+[[S.1 Properties of addition and multiplication]]
+[[S.2 Simplify expressions by combining like terms with algebra tiles]]
+[[S.5 Multiply using the distributive property]]
+[[S.9]]
+[[S.10 Factors of linear expressions]]

@@ -1,0 +1,2 @@
+![[Pasted image 20251027095539.png]]
+To get the correct answer combine the like terms so in the example image it shows 7x + 4 + 2x so you combine the 7x and 2x to get 9x and then you have the 4 leftover and since there is no subtraction here the answer is 9x + 4.
